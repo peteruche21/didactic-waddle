@@ -1,0 +1,86 @@
+scalar BigInt
+
+type Rights {
+  id: String!
+  rightsId: BigInt!
+  depositor: String!
+  contract: String!
+  tokenId: BigInt!
+  expiration: BigInt
+  tx_hash: String!
+  created_at: Int!
+  created_at_block: Int!
+}
+
+type All {
+  id: String!
+  from: String!
+  to: String!
+  rights: String!
+  enable: Boolean
+  tx_hash: String!
+  created_at: Int!
+  created_at_block: Int!
+}
+
+type ContractDelegations {
+  id: String!
+  from: String!
+  to: String!
+  contract: String!
+  rights: String!
+  enable: Boolean
+  tx_hash: String!
+  created_at: Int!
+  created_at_block: Int!
+}
+
+type ERC20Delegations {
+  id: String!
+  from: String!
+  to: String!
+  contract: String!
+  amount: BigInt!
+  rights: String!
+  enable: Boolean
+  tx_hash: String!
+  created_at: Int!
+  created_at_block: Int!
+}
+
+type ERC1155Delegations {
+  id: String!
+  from: String!
+  to: String!
+  contract: String!
+  tokenId: BigInt!
+  amount: BigInt!
+  rights: String!
+  enable: Boolean
+  tx_hash: String!
+  created_at: Int!
+  created_at_block: Int!
+}
+
+type ERC721Delegations {
+  id: String!
+  from: String!
+  to: String!
+  contract: String!
+  tokenId: BigInt!
+  rights: String!
+  enable: Boolean
+  tx_hash: String!
+  created_at: Int!
+  created_at_block: Int!
+}
+
+type User {
+  id: String!
+  rights: [Rights]!
+  delegations: [All]!
+  contractDelegations: [ContractDelegations]!
+  erc20Delegations: [ERC20Delegations]!
+  erc1155Delegations: [ERC1155Delegations]!
+  erc721Delegations: [ERC721Delegations]!
+}

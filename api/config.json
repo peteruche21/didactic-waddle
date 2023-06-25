@@ -1,0 +1,48 @@
+{
+  "network": "goerli-alpha",
+  "network_node_url": "https://starknet-goerli.infura.io/v3/46a5dd9727bf48d4a132672d3f376146",
+  "sources": [
+    {
+      "contract": "liquid delegate contract address",
+      "start": 185778,
+      "deploy_fn": "handleDeploy",
+      "events": [
+        {
+          "name": "rights_created",
+          "fn": "handleRightsCreated"
+        },
+        {
+          "name": "rights_burned",
+          "fn": "handleRightsBurned"
+        }
+      ]
+    },
+    {
+      "contract": "delegation registry contract address",
+      "start": 185778,
+      "deploy_fn": "handleDeploy",
+      "events": [
+        {
+          "name": "delegate_all",
+          "fn": "handleDelegateAll"
+        },
+        {
+          "name": "delegate_contract",
+          "fn": "handleDelegateContract"
+        },
+        {
+          "name": "delegate_ERC721",
+          "fn": "handleDelegateERC721"
+        },
+        {
+          "name": "delegate_ERC20",
+          "fn": "handleDelegateERC20"
+        },
+        {
+          "name": "delegate_ERC1155",
+          "fn": "handleDelegateERC1155"
+        }
+      ]
+    }
+  ]
+}
